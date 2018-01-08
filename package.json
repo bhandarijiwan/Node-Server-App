@@ -8,39 +8,20 @@
     "license": "MIT",
     "scripts": {
         "precommit": "yarn lint",
-        "prestart": "yarn docs",
         "start": "cross-env NODE_ENV=production pm2 start ./src/index.js",
-        "dev": "nodemon ./src/index.js",
         "lint":
             "eslint **/*.js --ignore-path .gitignore --ignore-pattern internals/scripts",
-        "lint:fix": "yarn lint -- --fix",
-        "lint:watch": "yarn lint -- --watch",
-        "test":
-            "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 20000 --recursive src/api/tests",
-        "test:unit": "cross-env NODE_ENV=test mocha src/api/tests/unit",
-        "test:integration":
-            "cross-env NODE_ENV=test mocha --timeout 20000 src/api/tests/integration",
-        "test:watch":
-            "cross-env NODE_ENV=test mocha --watch src/api/tests/unit",
-        "coverage": "nyc report --reporter=text-lcov | coveralls",
-        "postcoverage": "opn coverage/lcov-report/index.html",
-        "validate": "yarn lint && yarn test",
-        "postpublish": "git push --tags",
-        "deploy": "sh ./deploy.sh",
-        "docs": "apidoc -i src -o docs",
-        "postdocs": "opn docs/index.html",
-        "docker:start":
-            "cross-env NODE_ENV=production pm2-docker start ./src/index.js",
-        "docker:prod":
-            "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
-        "docker:dev":
-            "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
-        "docker:test":
-            "docker-compose -f docker-compose.yml -f docker-compose.test.yml up --abort-on-container-exit"
+        "test": "jest ",
+        "test:unit": "",
+        "test:integration": "",
+        "test:watch": "",
+        "coverage": "",
+        "postcoverage": "",
+        "validate": "yarn lint && yarn test"
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:danielfsousa/express-rest-es2017-boilerplate.git"
+        "url": "git@github.com:bhandarijiwan/Node-Server-App.git"
     },
     "keywords": [
         "express",
@@ -53,12 +34,11 @@
         "es7",
         "es8",
         "es2017",
-        "mocha",
-        "istanbul",
+        "jest",
         "nyc",
         "eslint",
-        "Travis CI",
-        "coveralls",
+        "Circle CI",
+        "CodeCov",
         "REST",
         "API",
         "boilerplate",
@@ -92,20 +72,12 @@
         "uuid": "^3.1.0"
     },
     "devDependencies": {
-        "apidoc": "^0.17.5",
-        "chai": "^4.1.0",
-        "chai-as-promised": "^7.1.1",
         "coveralls": "^3.0.0",
         "eslint": "^4.2.0",
         "eslint-config-airbnb-base": "^12.0.1",
         "eslint-plugin-import": "^2.2.0",
         "husky": "^0.14.3",
-        "mocha": "^3.3.0",
-        "nodemon": "^1.11.0",
-        "nyc": "^11.0.3",
-        "opn-cli": "^3.1.0",
-        "sinon": "^4.0.1",
-        "sinon-chai": "^2.10.0",
-        "supertest": "^3.0.0"
+        "jest": "^22.0.4",
+        "nodemon": "^1.11.0"
     }
 }
