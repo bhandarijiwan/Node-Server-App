@@ -12,6 +12,8 @@
         "lint":
             "eslint **/*.js --ignore-path .gitignore --ignore-pattern internals/scripts",
         "test": "jest ",
+        "cov": "jest --config jest.json --coverage",
+        "cov:view": "open coverage/lcov-report/index.html",
         "test:unit": "",
         "test:integration": "",
         "test:watch": "",
@@ -72,6 +74,7 @@
         "uuid": "^3.1.0"
     },
     "devDependencies": {
+        "codecov": "^3.0.0",
         "coveralls": "^3.0.0",
         "eslint": "^4.2.0",
         "eslint-config-airbnb-base": "^12.0.1",
