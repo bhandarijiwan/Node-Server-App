@@ -1,2 +1,2 @@
-# Node-Server-App
+# Node-Server-App Build: [![CircleCI](https://circleci.com/gh/bhandarijiwan/Node-Server-App/tree/master.svg?style=svg)](https://circleci.com/gh/bhandarijiwan/Node-Server-App/tree/master) [![codecov](https://codecov.io/gh/bhandarijiwan/Node-Server-App/branch/master/graph/badge.svg)](https://codecov.io/gh/bhandarijiwan/Node-Server-App)
 Server API using NodeJs
