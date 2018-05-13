@@ -8,7 +8,7 @@
     <script type="text/javascript">
       
       (async function() {
-    const t = await fetch("http://api.icndb.com/jokes/random");
+    const t = await fetch("https://api.icndb.com/jokes/random");
     const text = await t.text();
     document.getElementById('joke').innerHTML = JSON.parse(text).value.joke;
 })();
