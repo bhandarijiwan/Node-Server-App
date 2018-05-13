@@ -4,6 +4,17 @@
   </head>
   <body>
     <h1>Hello this is test file</h1>
+    <p id="joke"></p>
+    <script type="text/javascript">
+      
+      (async function() {
+    const t = await fetch("http://api.icndb.com/jokes/random");
+    const text = await t.text();
+    document.getElementById('joke').innerHTML = JSON.parse(text).value.joke;
+})();
+
+
+    </script>
   </body>
 </html>
 
